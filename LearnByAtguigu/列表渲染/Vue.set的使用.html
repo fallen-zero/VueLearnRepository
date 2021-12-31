@@ -1,0 +1,75 @@
+<!--
+ * @Author       : Zero
+ * @Date         : 2021-12-24 13:07:13
+ * @LastEditors  : Zero
+ * @LastEditTime : 2021-12-24 16:04:23
+ * @FilePath     : /Learn/Vue2+Vue3/列表渲染/Vue.set的使用.html
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.set的使用</title>
+    <script src="../js//vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <h1>本人信息</h1>
+        <h2>本人名称: {{name}}</h2>
+        <h2>所在地址: {{address}}</h2>
+        <hr>
+        <h1>女友信息</h1>
+        <button @click="addSex">点击添加一个性别属性，默认值是女</button>
+        <h2>女友姓名: {{grilFriend.name}}</h2>
+        <h2 v-if="grilFriend.sex">女友性别: {{grilFriend.sex}}</h2>
+        <h2>女友年龄: 真实{{grilFriend.age.rAge}}, 对外{{grilFriend.age.sAge}}</h2>
+        <ul>
+            <li v-for="(f, index) in grilFriend.friends" :key="index">
+                {{f.name}}--{{f.age}}
+            </li>
+        </ul>
+    </div>
+    <script>
+        Vue.config.productionTip = false;
+
+        const vm = new Vue({
+            el: "#root",
+            data: {
+                name: "Zero",
+                address: "上海",
+                grilFriend: {
+                    name: "Paopao",
+                    age: {
+                        rAge: 20,
+                        sAge: 19,
+                    },
+                    friends: [
+                        {
+                            name: "jerry",
+                            age: 25,
+                        },
+                        {
+                            name: "tony",
+                            age: 28,
+                        }
+                    ],
+                },
+            },
+            methods: {
+                addSex() {
+                    // Vue.set(this.grilFriend, "sex", "女");
+                    this.$set(this.grilFriend, "sex", "女");
+                }
+            },
+        });
+    </script>
+</body>
+
+</html>

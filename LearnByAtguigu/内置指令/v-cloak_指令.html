@@ -1,0 +1,39 @@
+<!--
+ * @Author       : Zero
+ * @Date         : 2021-12-27 11:02:25
+ * @LastEditors  : Zero
+ * @LastEditTime : 2021-12-27 11:17:45
+ * @FilePath     : /Learn/Vue2+Vue3/内置指令/v-cloak_指令.html
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-cloak指令</title>
+    <script src="../js/vue.js"></script>
+    <style>
+        [v-clock] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <h2 v-clock="">{{name}}</h2>
+    </div>
+    <script>
+        Vue.config.productionTip = false;
+
+        new Vue({
+           el: "#root",
+           data: {
+               
+           }, 
+        });
+    </script>
+</body>
+</html>
