@@ -2,8 +2,8 @@
  * @Author       : Zero
  * @Date         : 2021-12-29 09:41:15
  * @LastEditors  : Zero
- * @LastEditTime : 2022-01-03 00:16:27
- * @FilePath     : /LearnByAtguigu/vue-cli/vue_test/src/main.js
+ * @LastEditTime : 2021-12-29 12:40:32
+ * @FilePath     : /Learn/Vue2+Vue3/vue-cli/vue_test/src/main.js
  */
 
 // 引入Vue
@@ -18,7 +18,4 @@ Vue.config.productionTip = false;
 new Vue({
     el: '#app',
     render: (h) => h(App),
-    beforeCreate() {
-        Vue.prototype.$bus = this;
-    },
 });

@@ -2,7 +2,7 @@
  * @Author       : Zero
  * @Date         : 2021-12-29 09:41:02
  * @LastEditors  : Zero
- * @LastEditTime : 2022-01-03 00:20:58
+ * @LastEditTime : 2022-01-02 01:01:27
  * @FilePath     : /LearnByAtguigu/vue-cli/vue_test/src/App.vue
 -->
 
@@ -15,7 +15,9 @@
                     @addTodo="addTodo" 
                 />
                 <MyList 
-                    :todos="todos"
+                    :todos="todos" 
+                    :checkTodo="checkTodo"
+                    :deleteTodo="deleteTodo"
                 />
                 <MyFooter 
                     :todos="todos"
@@ -80,14 +82,6 @@
                     localStorage.setItem('todos', JSON.stringify(value));
                 }
             }
-        },
-        mounted() {
-            this.$bus.$on('checkTodo', this.checkTodo);
-            this.$bus.$on('deleteTodo', this.deleteTodo);
-        },
-        beforeDestroy() {
-            this.$bus.$off('checkTodo');
-            this.$bus.$off('deleteTodo');
         },
     }
 </script>

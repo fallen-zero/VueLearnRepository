@@ -2,8 +2,8 @@
  * @Author       : Zero
  * @Date         : 2021-12-29 09:45:05
  * @LastEditors  : Zero
- * @LastEditTime : 2021-12-30 11:21:35
- * @FilePath     : /Learn/Vue2+Vue3/vue-cli/vue_test/src/components/Student.vue
+ * @LastEditTime : 2022-01-02 00:17:52
+ * @FilePath     : /LearnByAtguigu/vue-cli/vue_test/src/components/Student.vue
 -->
 
 
@@ -37,12 +37,13 @@
             sendStudentName() {
                 // 触发Student组件实例身上的zero事件
                 this.$emit('zero', this.name, this.sex, 666, 888);
-                this.$emit('demo');
+                // this.$emit('demo');
+                // this.$emit('click');
             },
             unbind() {
-                // this.$off('zero');  // 解绑一个自定义事件
+                this.$off('zero');  // 解绑一个自定义事件
                 // this.$off(['zero', 'demo']);  // 解绑多个自定义事件
-                this.$off();    // 解绑所有的自定义事件
+                // this.$off();    // 解绑所有的自定义事件
             },
             death() {
                 this.$destroy();    // 销毁了当前Student组件的实例, 销毁后所有Student实例的自定义事件全都不奏效。
