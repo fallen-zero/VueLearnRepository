@@ -1,0 +1,40 @@
+<!--
+ * @Author       : Zero
+ * @Date         : 2022-01-04 13:05:19
+ * @LastEditors  : Zero
+ * @LastEditTime : 2022-01-04 14:10:26
+ * @FilePath     : /LearnByAtguigu/vue-cli/vue_test/src/components/Category.vue
+-->
+
+
+<template>
+    <div class="category">
+        <h3>{{title}}分类</h3>
+        <slot :games="games">我是默认的一些内容</slot>
+    </div>
+</template>
+
+<script>
+export default {
+    name: 'Category',
+    props:['title'],
+    data() {
+        return {
+            games: ['红色警戒', '穿越火线', '英雄联盟', '超级玛丽'],
+        }
+    },
+}
+</script>
+
+<style scoped>
+    .category {
+        background-color: skyblue;
+        width: 200px;
+        height: 300px;
+    }
+
+    h3 {
+        text-align: center;
+        background-color: orange;
+    }
+</style>
