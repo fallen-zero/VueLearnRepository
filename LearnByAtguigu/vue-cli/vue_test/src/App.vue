@@ -1,29 +1,57 @@
 <!--
  * @Author       : Zero
+ * @Date         : 2022-01-09 00:08:46
+ * @LastEditors  : Zero
+ * @LastEditTime : 2022-01-09 00:23:15
+ * @FilePath     : /vue_test/src/App.vue
+-->
+
+
+<!--
+ * @Author       : Zero
  * @Date         : 2021-12-29 09:41:02
  * @LastEditors  : Zero
- * @LastEditTime : 2022-01-06 17:30:22
+ * @LastEditTime : 2022-01-08 17:58:22
  * @FilePath     : /vue_test/src/App.vue
 -->
 
 
 <template>
     <div>
-        <Count />
-        <hr>
-        <Person />
+        <button>原生的按钮</button>
+        <input type="text">
+        <el-row>
+            <el-button>默认按钮</el-button>
+            <el-button type="primary">主要按钮</el-button>
+            <el-button type="success">成功按钮</el-button>
+            <el-button type="info">信息按钮</el-button>
+            <el-button type="warning">警告按钮</el-button>
+            <el-button type="danger">危险按钮</el-button>
+        </el-row>
+        <el-date-picker
+            v-model="value1"
+            type="date"
+            placeholder="选择日期"
+        >
+        </el-date-picker>
+        <el-row>
+            <el-button icon="el-icon-search" circle></el-button>
+            <el-button type="primary" icon="el-icon-edit" circle></el-button>
+            <el-button type="success" icon="el-icon-check" circle></el-button>
+            <el-button type="info" icon="el-icon-message" circle></el-button>
+            <el-button type="warning" icon="el-icon-star-off" circle></el-button>
+            <el-button type="danger" icon="el-icon-delete" circle></el-button>
+        </el-row>
     </div>
 </template>
 
 <script>
-    import Count from './components/Count.vue';
-    import Person from './components/Person.vue';
-
     export default {
         name: 'App',
-        components: {
-            Count,
-            Person,
+        data() {
+            return {
+                value1: '',
+            };
         },
     }
 </script>

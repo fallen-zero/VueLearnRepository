@@ -1,0 +1,26 @@
+<!--
+ * @Author       : Zero
+ * @Date         : 2022-01-07 11:40:07
+ * @LastEditors  : Zero
+ * @LastEditTime : 2022-01-07 12:42:22
+ * @FilePath     : /vue_test/src/pages/About.vue
+-->
+
+
+<template>
+    <h2>我是About的内容</h2>
+</template>
+
+<script>
+    export default {
+        name: 'About',
+        /* beforeDestroy() {
+            console.log('About组件即将被销毁了');
+        }, */
+        /* mounted() {
+            console.log('About组件挂载完毕了', this);
+            window.aboutRoute = this.$route;
+            window.aboutRouter = this.$router;
+        }, */
+    }
+</script>
